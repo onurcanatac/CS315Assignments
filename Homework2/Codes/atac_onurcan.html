@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head><script>//Part 1
+  //should the conditional mechanism be an integral part of the exit (conditional or unconditional exit)
+  
+  //javascript has break statement, hence conditional mechanism shouldn't be an integral part of the exit
+  
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    break;
+  }
+  
+  console.log("--------");
+  
+  //continue statement passes to the next iteration of thhe loop without considering the remaining code of that iteration
+  
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    continue;
+    console.log("something");
+  }
+  
+  console.log("--------");
+  
+  //when used outside the loop
+  //javascript displays errors for both break and continue when not used in a loop
+  
+  //Part 2
+  //should only one loop body be exited or can enclosing loops also be exited (labeled or unlabeled exit)
+  
+  //javascript has labeled break statement, that enables programmer to exit multiple loops at once
+  
+  out: for (let i = 0; i < 5; i++) {
+    for (let k = 15; k < 20; k++) {
+      console.log(k);
+      break out;
+    }
+  }
+  
+  console.log("--------");
+  
+  // in this kind of use, continue statement continues executing from the next iteration of the
+  // outer loop
+  
+  outside: for (let i = 0; i < 2; i++) {
+    for (let k = 15; k < 20; k++) {
+      console.log(k);
+      continue outside;
+      console.log("something");
+    }
+  }
+  
+  console.log("--------");
+  
+  //unlabeled break statement works as expected, leaving only one loop
+  
+  for (let i = 0; i < 5; i++) {
+    for (let k = 10; k < 15; k++) {
+      console.log(k);
+      break;
+    }
+  }
+  
+  console.log("--------");
+  
+  //unlabeled continue works as expected, only exiting the inner loop iteration
+  
+  for (let i = 0; i < 2; i++) {
+    for (let k = 15; k < 17; k++) {
+      console.log(k);
+      continue;
+      console.log("something");
+    }
+  }
+   
+</script></head><body>output is printed on the console</body></html>

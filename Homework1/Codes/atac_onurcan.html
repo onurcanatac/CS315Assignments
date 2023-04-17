@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head><script>//onecompiler.com/javascript
+
+    //initialization
+    
+    var tennisPlayer = {
+      name: "Roger",
+      surname: "Federer",
+      age: 41,
+      racket: "Wilson Pro Staff",
+      favorite_shot: "Forehand",
+      backhand_type: "One-handed",
+    };
+    
+    //get and print the value for key "racket"
+    
+    var racket = tennisPlayer.racket;
+    console.log(racket);
+    
+    //add height item to the object
+    
+    tennisPlayer.height = 185;
+    
+    //remove backhand type from the object
+    
+    delete tennisPlayer.backhand_type;
+    
+    //change the favorite shot from Forehand to Backhand
+    
+    tennisPlayer.favorite_shot = "Backhand";
+    
+    //check for the existence of age (a key) in the object
+    
+    var propExists = false;
+    
+    if (tennisPlayer.hasOwnProperty("age")) {
+      propExists = true;
+    }
+    
+    console.log(propExists);
+    
+    //check for the existence of 185 (a value) in the object
+    
+    var valExists = false;
+    
+    if (Object.values(tennisPlayer).includes(185)) {
+      valExists = true;
+    }
+    
+    console.log(valExists);
+    
+    //apply a function foo that prints the key-value pair
+    
+    function foo(key, value) {
+      console.log(key + ": " + value);
+    }
+    
+    for (var [key, value] of Object.entries(tennisPlayer)) {
+      foo(key, value);
+    }
+    </script></head><body>output is printed on the console</body></html>
